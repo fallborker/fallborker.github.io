@@ -2,6 +2,7 @@
 *.gem
 *.css
 *.css.map
+TODO.txt
 Gemfile.lock
 
 _site/
