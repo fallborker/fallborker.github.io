@@ -38,6 +38,7 @@ body {
 }
 
 .post-meta { text-align: right; }
+.post-content { text-align: justify; }
 
 h2, h3, h4, h5, h6 { margin-top: 3rem; }
 
@@ -99,4 +100,15 @@ img {
 
 .minifooter {
     color: rgb(127, 127, 127);
+}
+
+#follow-tooltip {
+  position: fixed;
+  background:#000;
+  color:#fff;
+  padding:3px 6px;
+  font-size:12px;
+  border-radius:3px;
+  pointer-events:none;
+  opacity:0;
 }

@@ -2,10 +2,9 @@
 layout: post
 category: blog
 title: Introduction to NIL
----
-
-Today's song recommendation is: [O Velho e o Mar](https://open.spotify.com/track/247zvzvA75gyJl7Vu7KN6T) by Rubel!
-
+song_link: https://open.spotify.com/track/247zvzvA75gyJl7Vu7KN6T
+song_name: O Velho e o Mar
+song_author: Rubel
 ---
 
 Hi!

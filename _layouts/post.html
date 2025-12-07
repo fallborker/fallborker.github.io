@@ -10,6 +10,22 @@ layout: default
   </p>
   
   <h1>{{ page.title }}</h1>
+  
+  {%- if page.song_link -%}
+    <p  class="post-content">
+      Today's song recommendation is:
+      <a target="_blank"
+         rel="noopener noreferrer"
+         href="{{ page.song_link }}"
+         class="tooltip-src"
+         data-tip="Opens in a new tab"
+      >{{ page.song_name }}<a>
+      by {{ page.song_author }}!
+    </p>
+    <div id="follow-tooltip"></div>
+    <script src="/assets/js/tooltip.js"></script>
+    <hr />
+  {%- endif -%}
 
-  {{ content }}
+  <span class="post-content">{{ content }}</span>
 </article>
