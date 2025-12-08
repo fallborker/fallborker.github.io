@@ -12,12 +12,20 @@
   }
 }
 
-body[a="dark"] { @include dark-appearance; }
+body[a="dark"] .no-invert, .no-invert * {
+  filter: invert(1);
+}
 
+body[a="dark"] { @include dark-appearance; }
 
 @media (prefers-color-scheme: dark) {
   body[a="auto"] { @include dark-appearance; }
 }
+
+.no-invert, .no-invert * {
+  filter: invert(0);
+}
+
 // -------------------------------------------- //
 
 // bg color is also needed in html in order to

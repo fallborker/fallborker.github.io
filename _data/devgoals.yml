@@ -1,0 +1,10 @@
+entries:
+  - noinvert
+  - title: Create a small chunk to test things
+  - title: Create a character to walk around with physics
+  - title: Break blocks
+  - title: Place blocks
+  - title: Drop blocks
+  - title: Make it possible to craft tools somehow
+  - title: Basic progression (breaking away from normal sandbox progression)
+    status: discussion

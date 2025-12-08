@@ -1,26 +1,54 @@
+{%- assign noinvert = "" -%}
+{%- for x in include.collection -%}
+  {%- if x == "noinvert" or x contains "noinvert" -%}
+    {%- assign noinvert = "no-invert" -%}
+    {%- break -%}
+  {%- endif -%}
+{%- endfor -%}
+
 <ul>
-  {%-for item in include.collection-%}
-    <li>
-    {%- if item.url -%}
-      <a href="{{ item.url }}">{{ item.title }}</a>
-    {%- else -%}
-      {{ item.title }}
+  {%- for item in include.collection -%}
+
+    {%- if item.title -%}
+
+      {%- assign li-noinvert = "" -%}
+      {%- case item.status -%}
+        {%- when "wip" -%}
+          {%- assign color = "magenta" -%}
+          {%- assign li-noinvert = noinvert -%}
+        {%- when "done" -%}
+          {%- assign color = "lime" -%}
+          {%- assign li-noinvert = noinvert -%}
+        {%- when "discussion" -%}
+          {%- assign color = "orange" -%}
+          {%- assign li-noinvert = noinvert -%}
+        {%- else -%}
+          {%- assign color = "" -%}
+      {%- endcase -%}
+
+      <li style="color: {{ color }}" class="{{ li-noinvert }}">
+        {%- if item.url -%}
+          <a href="{{ item.url }}">{{ item.title }}</a>
+        {%- else -%}
+          {{ item.title }}
+        {%- endif -%}
+      </li>
+
+      {%- if item.post_list -%}
+        {% include post_list.html
+            category=item.post_list.category
+            limit=item.post_list.limit
+            show_more=item.post_list.show_more
+            show_more_text=item.post_list.show_more_text
+            show_more_url=item.post_list.show_more_url
+        %}
+      {%- endif -%}
+
+      {%- if item.entries -%}
+        {%- include menu_item.html collection=item.entries -%}
+      {%- endif -%}
+
     {%- endif -%}
-    </li>
 
-    {%-if item.post_list-%}
-      {%
-        include post_list.html
-          category=item.post_list.category
-          limit=item.post_list.limit
-          show_more=item.post_list.show_more
-          show_more_text=item.post_list.show_more_text
-          show_more_url=item.post_list.show_more_url
-     -%}
-    {%-endif-%}
-
-    {%-if item.entries-%}
-      {%-include menu_item.html collection=item.entries-%}
-    {%-endif-%}
-  {%-endfor-%}
+  {%- endfor -%}
 </ul>
