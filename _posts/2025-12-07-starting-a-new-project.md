@@ -7,7 +7,7 @@ song_name: Cotidiano
 song_author: Chico Buarque
 ---
 
-Welcome once more!
+Welcome to white space.
 
 Today's post (rant?) will be quite a short one, with no real release or downloadable content. I wanna talk about the discomfort of starting something new.
 
